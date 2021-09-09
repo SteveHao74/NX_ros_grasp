@@ -1,0 +1,30 @@
+
+#在四个终端分别运行：
+#1，打开机械臂的driver
+roslaunch kortex_driver kortex_driver.launch
+
+#2,打开相机
+roslaunch kinova_vision kinova_vision_rgbd.launch
+
+#3,运行grasp_node
+rosrun grasp_plan real_grasp_node.py
+
+#4,运行full_arm_node
+roslaunch grasp_plan full_arm_movement_python.launch
+
+
+sudo apt install gstreamer1.0-tools gstreamer1.0-libav libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev gstreamer1.0-plugins-good gstreamer1.0-plugins-base
+
+sudo apt-get install ros-melodic-rgbd-launch
+
+catkin_make clean
+catkin_make
+catkin_make install
+
+###master  plot_node.py
+###slave  real_grasp_node.py
+###
+
+
+todo:
+1,

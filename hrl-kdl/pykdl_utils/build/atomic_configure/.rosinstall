@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/shahao/catkin_ws/src/hrl-kdl/pykdl_utils/build/devel/setup.sh

@@ -1,0 +1,13 @@
+/usr/local/_setup_util.py
+/usr/local/env.sh
+/usr/local/setup.bash
+/usr/local/local_setup.bash
+/usr/local/setup.sh
+/usr/local/local_setup.sh
+/usr/local/setup.zsh
+/usr/local/local_setup.zsh
+/usr/local/.rosinstall
+/usr/local/lib/pkgconfig/pykdl_utils.pc
+/usr/local/share/pykdl_utils/cmake/pykdl_utilsConfig.cmake
+/usr/local/share/pykdl_utils/cmake/pykdl_utilsConfig-version.cmake
+/usr/local/share/pykdl_utils/package.xml

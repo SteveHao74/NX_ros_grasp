@@ -1,0 +1,21 @@
+ <?xml version="1.0" ?>
+        <sdf version="1.4">
+            <world name="default">
+                <include>
+                    <uri>model://ground_plane</uri>
+                </include>
+                <include>
+                    <uri>model://sun</uri>
+                </include>
+                <include>
+                    <uri>model://table</uri>
+                    <name>grasp_table</name>
+                    <pose>1.0 0.0 -0.8 0 0 0</pose>
+                </include>
+                <include>
+                    <uri>model://u_joint_part</uri>
+                    <name>u_joint_part</name>
+                    <pose>0.9 0 1 0 0 0</pose>
+                </include>
+            </world>
+        </sdf>

@@ -1,0 +1,100 @@
+#############################################
+# INSTALL ros_kortex and ros_kortex_vision #
+#############################################
+
+###############################################################################
+
+#To use this file you need to have Ubuntu 16.04 LTS
+
+###############################################################################
+
+
+# Step 0: Prepare the workspace
+
+# Go in the home directory, then create the directory you want to 
+# have your workspace. replace the !!!!! with the name you want 
+# for your workspace. (Suggested name : gen3ros_ws)
+
+# do those commands : 
+
+cd ~
+
+mkdir -p !!!!!/src #(Suggested name : gen3ros_ws)
+
+# STEP 1: download and execute
+
+# Download from the bitbucket or google drive, then
+# Google drive link : https://drive.google.com/drive/folders/1m_duJIfLEJkrYqTb14Cjxhni0l7kdb0W?usp=sharing take every file and folder and put it in the /src directory
+
+# To execute the file open a new terminal from where your file are 
+# and execute those commandes to make the file executable and to execute them.
+
+sudo chmod +x step1_make_executable.sh
+
+bash step1_make_executable.sh
+
+# STEP 2: install the apt necessary (dependencie) and it will REBOOT your 
+# computer
+
+# Execute the next line
+
+bash step2_install_dependencies.sh
+
+# STEP 3: install opencv-4.0.1
+# Open a new terminal from where your file are and execute that command
+
+bash step3_install_opencv.sh
+
+
+# STEP 4: install ROS
+# Open a new terminal from where your file are and execute that command
+
+bash step4_ros.sh
+
+# STEP 5: install Proto and kortex
+
+# put the file kortex_api-1.1.3.zip in the root directory 
+# then right click on it and extract here
+
+# the computer must not go in lock mode and/or sleep mode.
+# Open a new terminal from where your file are and execute that command
+
+bash step5_proto_kortex.sh 
+
+# STEP 6: Install kortex vision and cv_bridge
+# put the file step6_vision_cvbridge.sh in the folder src then
+# open a new terminal from where your file are and execute that command
+
+bash step6_vision_cvbridge.sh
+
+# STEP 7: Make Image_geometry find opencv 3.3.1
+# Modify CMakeLists.txt in /src/vision_opencv/Image_geometry/CMakeLists.txt
+# Find that line : find_package(OpenCV REQUIRED)
+# Replace it by    find_package(OpenCV 3 REQUIRED)
+
+# STEP 8: install demos
+# download from that link : https://drive.google.com/drive/folders/1m_duJIfLEJkrYqTb14Cjxhni0l7kdb0W?usp=sharing
+# the folder gen3_ros_opencv and gen3_gripper_pos_command and put them in
+# the folder /src. After open a new terminal from the folder root of the workspace
+# It will be gen3ros_ws if you have take the suggestion. Than execute that command
+
+catkin_make
+catkin_make install
+
+# STEP 9: make the demo executable
+chmod +x -r src/gen3_ros_opencv/src
+chmod +x -r src/gen3_ros_opencv/launch
+
+# don't You have finish !
+
+# To try the demo ai just run that line :
+
+roslaunch gen3_ros_opencv demo_ai.launch
+
+# To try the demo pickup just run that line :
+
+roslaunch gen3_ros_opencv demo_pickup.launch
+
+
+
+

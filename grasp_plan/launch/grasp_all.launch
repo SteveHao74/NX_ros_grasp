@@ -1,0 +1,15 @@
+<launch>
+    <include file="$(find kortex_gazebo)/launch/spawn_kortex_robot.launch" > 
+    </include> -->
+
+
+
+    <node name="sim_grasp_node" pkg="grasp_plan" type="sim_grasp_node.py" output="screen" >
+    </node>
+
+
+    <include file="$(find grasp_plan)/launch/full_arm_movement_python.launch" > 
+    </include>
+
+
+</launch>
